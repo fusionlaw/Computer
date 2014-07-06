@@ -26,7 +26,13 @@ public class Computer {
             String operation = in.next();
             System.out.println("请输入第二个参数：");
             float num2 = in.nextFloat();
-            String result = Float.toString(Operation.Operation(num1, num2, operation));
+//            String result = Float.toString(Operation.Operation(num1, num2, operation));
+//            System.out.println("结果为："+result);
+            Operation oper = null;
+            oper = OperationFactory.OperationFactory(operation);
+            oper.setNum1(num1);
+            oper.setNum2(num2);
+            String result = Float.toString(oper.getResult());
             System.out.println("结果为："+result);
         }catch(Exception ex){
             System.out.println("你的输入有错："+ex.getMessage());
